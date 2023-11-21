@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textToEmoji</title>
+    
+  <link rel="stylesheet" href="/assets/index-753b99d0.css">
+</head>
+<body class="bg-black">
+    
+    <div class="main text-white my-14 flex-row justify-center align-middle items-center ">
+        
+        <div class="top-heading">
+        <h1 class=" text-4xl md:text-6xl font-bold md:mx-12 flex justify-center">Text<span><img class="arrow w-14 inline mx-8 rotate-90 transition ease-in delay-150" src="/assets/arrow-up-ac10d8b6.png" alt="error"></span>Emoji</h1>
+        </div>
+
+        <div class=" enc-dec-text font-semibold mt-12 w-4/12 rounded-lg bg-gray-700 md:py-2  md:text-2xl text-1xl flex justify-center md:gap-x-10 mx-auto border-2 border-solid border-white ">
+
+            <span class="enc-text p-2 bg-gray-600 hover:bg-gray-600 rounded-lg">Encrypt Text</span>
+            <span class="dec-text p-2 hover:bg-gray-600 rounded-lg">Decrypt Text</span>
+        </div>
+
+        <div class="encryption md:w-4/12 mx-auto flex-row mt-16">
+
+            <div class="write-message">
+                <p class="">1. Write a message</p>
+                <textarea class="input-text bg-gray-700 mt-2 p-2 rounded-lg" placeholder="Enter message here" cols="70" rows="3" ></textarea>
+            </div>
+
+            <div class="password mt-5">
+                <p class="">1. Set a password</p>
+                <textarea class="set-password bg-gray-700 mt-2 p-2 rounded-lg" placeholder="Enter password here" cols="70" rows="1" ></textarea>
+            </div>
+
+            <button class="encrypt-btn bg-gray-700 text-2xl font-semibold w-10/12 mt-10 md:ml-14 rounded-lg py-2 transition ease-in delay-100 hover:bg-black">
+                Encrypt Text
+            </button>
+
+            <div class="enc-result p-2 bg-gray-600 rounded-lg mt-8 hidden">
+
+            </div>
+        </div>
+
+
+        <!-- ///////////decrytption///////////////////////////////// -->
+
+        <div class="decryption w-4/12 mx-auto flex-row mt-20 hidden">
+
+            <div class="write-emoji">
+                <p class="">1. Write emoji message</p>
+                <textarea class="emoji-text bg-gray-700 mt-2 p-2 rounded-lg" placeholder="Enter message here" cols="70" rows="3" ></textarea>
+            </div>
+
+            <div class="enter-password mt-5">
+                <p class="">1. Enter password</p>
+                <textarea class="get-password bg-gray-700 mt-2 p-2 rounded-lg" placeholder="Enter password here" cols="70" rows="1" ></textarea>
+            </div>
+
+            <button class="decrypt-btn bg-gray-700 text-2xl font-semibold w-10/12 mt-14 md:ml-14 rounded-lg py-2 transition ease-in delay-100 hover:bg-black">
+                Decrypt Text
+            </button>
+
+            <div class="dec-result p-2 bg-gray-600 rounded-lg mt-8 hidden">
+            
+            </div>
+        </div>
+         
+        <div>
+        <button class="clear p-4 mt-10 rounded-3xl bg-2 bg-rose-600 text-ellipsis-black ">CLEAR MEMORY</button>
+    </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
