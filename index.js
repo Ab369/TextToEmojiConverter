@@ -3,16 +3,16 @@
 ///////////////////////encryption and storage//////////////////
 document.querySelector(".encrypt-btn").addEventListener("click",()=>
 {
-   var input=document.querySelector(".input-text").value;
+   let input=document.querySelector(".input-text").value;
    //console.log(input);
-   var password=document.querySelector(".set-password").value;
+   let password=document.querySelector(".set-password").value;
    //console.log(password);
 
-   var buffer=inputToUnicode(input);
+   let buffer=inputToUnicode(input);
 
    displayResult(".enc-result",buffer);
 
-   var objToStore={message:input,pass:password,emoji:buffer};
+   let objToStore={message:input,pass:password,emoji:buffer};
 
    saveDataToLocalStorage(objToStore);
    
@@ -22,13 +22,13 @@ document.querySelector(".encrypt-btn").addEventListener("click",()=>
 document.querySelector(".decrypt-btn").addEventListener("click",()=>
 {
    
-   var decEmoji=document.querySelector(".emoji-text").value;
-   var decEmojiCode=emojiToCode(decEmoji);
-   var decPass=document.querySelector(".get-password").value;
+   let decEmoji=document.querySelector(".emoji-text").value;
+   let decEmojiCode=emojiToCode(decEmoji);
+   let decPass=document.querySelector(".get-password").value;
 
-   var storedArray=JSON.parse(localStorage.getItem('data'));
+   let storedArray=JSON.parse(localStorage.getItem('data'));
 
-   var a=validateEmojiAndPassword(storedArray,decEmojiCode,decPass);
+   let a=validateEmojiAndPassword(storedArray,decEmojiCode,decPass);
 
    if(a==0) //if input emoji not stored
    displayResult(".dec-result","Input emoji not stored!");
@@ -66,10 +66,10 @@ document.querySelector(".clear").addEventListener("click",()=>
 function inputToUnicode(input)
 {
      //we can also use "array.from" here
-    var str=input.split("");
+    let str=input.split("");
     // console.log(str);
 
-   var buffer='';
+   let buffer='';
    str.forEach(element => {
        buffer+='&#128'+(element.charCodeAt());
    });
@@ -80,14 +80,14 @@ function inputToUnicode(input)
 // function to display result on pressing enc/dec button
 function displayResult(className,resultValue)
 {
-    var result=document.querySelector(className);
+    let result=document.querySelector(className);
     result.style.display='block';
     result.innerHTML=resultValue;
  
 }
 
 //saving input string,password and Emoji(in unicode) to localStorage
-var dataArr;
+let dataArr;
 function saveDataToLocalStorage(objToStore)
 {
     if(localStorage.getItem('data'))
@@ -107,7 +107,7 @@ function saveDataToLocalStorage(objToStore)
 //Converting emoji entered for decryption to Unicode form for comparision with storedArray emoji Unicodes
 function emojiToCode(decEmoji)
 {
-   var decEmojiCode="";
+   let decEmojiCode="";
 
    decEmoji=Array.from(decEmoji);
   
@@ -124,7 +124,7 @@ function emojiToCode(decEmoji)
 // function for validation of input emoji and password for encryption
 function validateEmojiAndPassword(storedArray,decEmojiCode,decPass)
 {
-   var flag=0;
+   let flag=0;
 
    storedArray.forEach((e)=>
    {
@@ -165,7 +165,7 @@ function ChangeInputForm(currrentFormClass,ChangedFormClass)
 /////////////////////////////////////////////////////CODE ENDS HERE/////////////////////////////////
 
 //////////////////////////////check parse and stringify working ///////////////////////
-// var arr=[1,2,3,4,'b'];
+// let arr=[1,2,3,4,'b'];
 // console.log(JSON.stringify(arr));
 // console.log(arr);
 // localStorage.setItem("array",JSON.stringify(arr));
